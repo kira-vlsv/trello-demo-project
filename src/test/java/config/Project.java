@@ -4,13 +4,13 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class Project {
 
-    public static ProjectConfig projectConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+    public static ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 
     public static boolean isRemoteWebDriver() {
-        return projectConfig.remoteDriverUrl() != null && !projectConfig.remoteDriverUrl().isEmpty();
+        return config.remoteDriverUrl() != null && !config.remoteDriverUrl().isEmpty();
     }
 
     public static boolean isVideoOn() {
-        return !projectConfig.videoStorage().equals("");
+        return !config.videoStorage().equals("");
     }
 }

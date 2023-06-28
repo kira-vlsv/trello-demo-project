@@ -8,7 +8,7 @@ repositories {
 }
 
 ext {
-    allureVersion = "2.21.0"
+    allureVersion = "2.22.0"
     selenideVersion = "6.13.1"
     junitVersion = "5.9.3"
 }
@@ -16,7 +16,7 @@ ext {
 allure {
     version = allureVersion
     autoconfigure = true
-    aspectjweaver = true
+    aspectjweaver = true // обработка аннотации @step
     configuration = "testImplementation"
     useJUnit5 {
         version = allureVersion
@@ -28,9 +28,11 @@ dependencies {
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
+            'org.assertj:assertj-core:3.24.2',
             "org.aspectj:aspectjweaver:1.9.19",
-            "org.slf4j:slf4j-simple:1.7.29",
-            "org.aeonbits.owner:owner:1.0.12"
+            "org.slf4j:slf4j-simple:2.0.5",
+            "org.aeonbits.owner:owner:1.0.12",
+            "com.github.javafaker:javafaker:1.0.2"
     )
 }
 
