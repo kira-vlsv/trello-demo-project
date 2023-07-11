@@ -1,10 +1,14 @@
 package uitests;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
+import config.Project;
+import helpers.AllureAttachments;
 import helpers.DriverSettings;
 import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import uitests.pageobjects.mainpage.MainPage;
@@ -14,7 +18,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static config.Auth.authConfig;
 
-public class BaseTest {
+public abstract class BaseTest {
 
     protected final MainPage mainPage = new MainPage();
     protected final Faker faker = new Faker();
@@ -33,12 +37,14 @@ public class BaseTest {
         $(byId("password")).setValue(authConfig.userPassword()).pressEnter();
     }
 
-//    @AfterEach
-//    public void addAttachments() {
-//        AllureAttachments.screenshotAs("Last screenshot");
-//        AllureAttachments.pageSource();
-//        AllureAttachments.browserConsoleLogs();
-//        AllureAttachments.addVideo();
-//        Selenide.closeWebDriver();
-//    }
+    @AfterEach
+    public void addAttachments() {
+        AllureAttachments.screenshotAs("Last screenshot");
+        AllureAttachments.pageSource();
+        AllureAttachments.browserConsoleLogs();
+        if (Project.isVideoOn()) {
+            AllureAttachments.addVideo();
+        }
+        Selenide.closeWebDriver();
+    }
 }

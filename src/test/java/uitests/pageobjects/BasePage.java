@@ -1,4 +1,4 @@
 package uitests.pageobjects;
 
-public class BasePage {
+public abstract class BasePage {
 }
