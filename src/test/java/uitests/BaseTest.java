@@ -1,5 +1,6 @@
 package uitests;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
@@ -33,7 +34,8 @@ public abstract class BaseTest {
     @Step("Login to the Trello")
     public void login() {
         open("/login");
-        $(byId("user")).setValue(authConfig.userLogin()).pressEnter();
+        $("#user").shouldBe(Condition.interactable)
+                .setValue(authConfig.userLogin()).pressEnter();
         $(byId("password")).setValue(authConfig.userPassword()).pressEnter();
     }
 
