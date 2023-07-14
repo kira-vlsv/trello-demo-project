@@ -1,0 +1,14 @@
+{
+  "chrome": {
+    "default": "91.0",
+    "versions": {
+      "91.0": {
+        "image": "selenoid/vnc_chrome:91.0",
+        "port": "4444"
+      }, "114.0": {
+        "image": "selenoid/vnc_chrome:114.0",
+        "port": "4444"
+      }
+    }
+  }
+}

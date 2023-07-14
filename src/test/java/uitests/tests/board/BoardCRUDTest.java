@@ -1,14 +1,19 @@
-package uitests;
+package uitests.tests.board;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import uitests.tests.BaseUITest;
 import uitests.pageobjects.boardpage.BoardPage;
 import uitests.pageobjects.mainpage.CreateBoardSlider;
 import uitests.pageobjects.boardpage.WorkspaceNavigationSlider;
 
-public class BoardCRUDTest extends BaseTest {
+import static utils.RandomGenerator.randomString;
+
+@Tag("Regression")
+class BoardCRUDTest extends BaseUITest {
 
     private BoardPage boardPage;
     private CreateBoardSlider createBoardSlider;
@@ -18,8 +23,8 @@ public class BoardCRUDTest extends BaseTest {
     @Feature("Trello board")
     @Story("As a user I can create a board from the Main Page")
     @DisplayName("Create new board from Main Page")
-    public void createBoard() {
-        String boardName = faker.rockBand().name();
+    void createBoard() {
+        String boardName = randomString("Board");
         createBoardSlider = mainPage.openCreateBoardSlider();
         boardPage = createBoardSlider.setBoardName(boardName)
                 .createBoard();

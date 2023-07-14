@@ -1,4 +1,4 @@
-package uitests;
+package uitests.tests;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -11,14 +11,16 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import uitests.pageobjects.mainpage.MainPage;
 
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static config.Auth.authConfig;
+import static config.UIAuth.config;
 
-public abstract class BaseTest {
+@Tag("UI")
+public abstract class BaseUITest {
 
     protected final MainPage mainPage = new MainPage();
     protected final Faker faker = new Faker();
@@ -33,8 +35,8 @@ public abstract class BaseTest {
     @Step("Login to the Trello")
     public void login() {
         open("/login");
-        $(byId("user")).setValue(authConfig.userLogin()).pressEnter();
-        $(byId("password")).setValue(authConfig.userPassword()).pressEnter();
+        $(byId("user")).setValue(config.userLogin()).pressEnter();
+        $(byId("password")).setValue(config.userPassword()).pressEnter();
     }
 
     @AfterEach

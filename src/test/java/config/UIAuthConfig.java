@@ -5,10 +5,10 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:auth.properties"
+        "classpath:uiAuth.properties"
 })
 
-public interface AuthConfig extends Config {
+public interface UIAuthConfig extends Config {
     @Config.Key("userLogin")
     String userLogin();
 
