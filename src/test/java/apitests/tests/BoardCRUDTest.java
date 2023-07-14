@@ -23,15 +23,16 @@ class BoardCRUDTest extends BaseAPITest {
     BoardApiObj boardApiObj = new BoardApiObj();
     BoardDTO boardDTORequest,
             boardDTOCreateResponse,
-            boardDTOGetResponse,
-            boardDTOUpdateResponse;
+            boardDTOGetResponse;
     List<String> boardIdsToDelete = new ArrayList<>();
 
     @AfterEach
     void teardown() {
-        for (String id : boardIdsToDelete) {
-            boardApiObj.deleteBoard(id);
-        }
+        step("Teardown - Delete boards", () -> {
+            for (String id : boardIdsToDelete) {
+                boardApiObj.deleteBoard(id);
+            }
+        });
     }
 
     @Test
@@ -73,17 +74,19 @@ class BoardCRUDTest extends BaseAPITest {
             boardDTOCreateResponse = createBoardWithRequiredFields(boardName, boardDesc);
             assertThat(boardDTOCreateResponse.getName()).isEqualTo(boardName);
             assertThat(boardDTOCreateResponse.getDesc()).isEqualTo(boardDesc);
-            boardIdsToDelete.add(boardDTOCreateResponse.getId());
         });
 
-        step("Step 1 - Create board", () -> {
-            boardDTORequest = new BoardDTO().setName(boardNameNew)
-                    .setDesc(boardDescNew)
-                    .setClosed(true);
-            boardDTOUpdateResponse = boardApiObj
+        boardIdsToDelete.add(boardDTOCreateResponse.getId());
+
+        boardDTORequest = new BoardDTO().setName(boardNameNew)
+                .setDesc(boardDescNew)
+                .setClosed(true);
+
+        BoardDTO boardDTOUpdateResponse = step("Step 1 - Update board", () ->
+            boardApiObj
                     .updateBoard(boardDTOCreateResponse.getId(), boardDTORequest)
-                    .as(BoardDTO.class);
-        });
+                    .as(BoardDTO.class)
+        );
 
         step("Step 2 - Get board by ID and verify fields", () -> {
             boardDTOGetResponse = boardApiObj

@@ -1,6 +1,7 @@
 package apitests.specs;
 
 import config.APIAuth;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -22,6 +23,7 @@ public class BaseSpecification {
                 .addQueryParam("token", APIAuth.config.token())
                 .setContentType(ContentType.JSON)
                 .setBasePath(path)
+                .addFilter(new AllureRestAssured())
                 .log(METHOD).log(URI).log(HEADERS).log(BODY).build();
     }
 
