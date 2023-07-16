@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import uitests.tests.BaseUITest;
 import uitests.pageobjects.boardpage.BoardPage;
 
+import static utils.RandomGenerator.randomString;
+
 @Tag("Regression")
 class CardCRUDTest extends BaseUITest {
 
@@ -19,8 +21,8 @@ class CardCRUDTest extends BaseUITest {
     @DisplayName("Create new card from Board Page")
     @Tag("Cards")
     void createCard() {
-        String listName = faker.artist().name();
-        String cardName = faker.animal().name();
+        String listName = randomString("List");
+        String cardName = randomString("Card");
         boardPage = mainPage.openBoard("Trello Demo Testing", "CardCRUDTest");
         boardPage.createList(listName);
         boardPage.createCard(listName, cardName);
