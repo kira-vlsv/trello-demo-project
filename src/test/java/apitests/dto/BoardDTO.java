@@ -1,8 +1,8 @@
 package apitests.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class BoardDTO extends BaseDTO {
 	private Object templateGallery;
 	private List<String> premiumFeatures;
 	private String url;
-	private PrefsDTO prefsDTO;
+	private PrefsDTO prefs;
 	private boolean enterpriseOwned;
 	private Object ixUpdate;
 	private Object idEnterprise;

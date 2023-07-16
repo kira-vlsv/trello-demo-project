@@ -2,7 +2,7 @@ package apitests.dto;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Data
 @Accessors(chain = true)

@@ -3,7 +3,6 @@ package apitests.tests;
 import apitests.apiobjects.BoardApiObj;
 import apitests.dto.BoardDTO;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,12 +12,14 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static apitests.steps.BoardSteps.createBoardWithRequiredFields;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 import static utils.RandomGenerator.randomString;
 
 @Tag("Regression")
-class BoardCRUDTest extends BaseAPITest {
+@Tag("Positive")
+class BoardCRUDPositiveTest extends BaseAPITest {
 
     BoardApiObj boardApiObj = new BoardApiObj();
     BoardDTO boardDTORequest,
@@ -39,14 +40,12 @@ class BoardCRUDTest extends BaseAPITest {
     @Feature("Trello board")
     @Story("As a user I can create a board using API")
     @DisplayName("Create new board using API")
-    void testAddNewBoard() {
+    void createBoardWithRequiredParameters() {
         String boardName = randomString("Board");
-        String boardDesc = randomString("Description");
 
         step("Step 1 - Create board", () -> {
-            boardDTOCreateResponse = createBoardWithRequiredFields(boardName, boardDesc);
+            boardDTOCreateResponse = createBoardWithRequiredFields(boardName);
             assertThat(boardDTOCreateResponse.getName()).isEqualTo(boardName);
-            assertThat(boardDTOCreateResponse.getDesc()).isEqualTo(boardDesc);
             boardIdsToDelete.add(boardDTOCreateResponse.getId());
         });
 
@@ -64,16 +63,13 @@ class BoardCRUDTest extends BaseAPITest {
     @Feature("Trello board")
     @Story("As a user I can update a board using API")
     @DisplayName("Update a board using API")
-    void testUpdateBoard() {
+    void updateBoardNameAndDescription() {
         String boardName = randomString("Board");
-        String boardDesc = randomString("Description");
         String boardNameNew = randomString("Board");
         String boardDescNew = randomString("Description");
 
         step("Setup - Create board", () -> {
-            boardDTOCreateResponse = createBoardWithRequiredFields(boardName, boardDesc);
-            assertThat(boardDTOCreateResponse.getName()).isEqualTo(boardName);
-            assertThat(boardDTOCreateResponse.getDesc()).isEqualTo(boardDesc);
+            boardDTOCreateResponse = createBoardWithRequiredFields(boardName);
         });
 
         boardIdsToDelete.add(boardDTOCreateResponse.getId());
@@ -103,14 +99,11 @@ class BoardCRUDTest extends BaseAPITest {
     @Feature("Trello board")
     @Story("As a user I can delete a board using API")
     @DisplayName("Delete a board using API")
-    void testDeleteBoard() {
+    void deleteBoard() {
         String boardName = randomString("Board");
-        String boardDesc = randomString("Description");
 
         step("Setup - Create board", () -> {
-            boardDTOCreateResponse = createBoardWithRequiredFields(boardName, boardDesc);
-            assertThat(boardDTOCreateResponse.getName()).isEqualTo(boardName);
-            assertThat(boardDTOCreateResponse.getDesc()).isEqualTo(boardDesc);
+            boardDTOCreateResponse = createBoardWithRequiredFields(boardName);
         });
 
         step("Step 1 - Delete board by ID", () -> {
@@ -120,15 +113,5 @@ class BoardCRUDTest extends BaseAPITest {
         step("Step 2 - Get board by ID and verify error code is returned", () -> {
             boardApiObj.getNonExistentBoard(boardDTOCreateResponse.getId());
         });
-    }
-
-    @Step("Create board with only required fields")
-    private BoardDTO createBoardWithRequiredFields(String boardName, String boardDesc) {
-        boardDTORequest = new BoardDTO()
-                .setName(boardName)
-                .setDesc(boardDesc);
-        return boardApiObj
-                .createBoard(boardDTORequest)
-                .as(BoardDTO.class);
     }
 }

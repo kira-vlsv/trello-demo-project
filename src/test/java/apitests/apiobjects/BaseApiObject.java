@@ -34,6 +34,21 @@ public class BaseApiObject {
         return response;
     }
 
+    public Response requestPostWithoutBody(String path) {
+        response = given(baseRequestSpecification(path))
+                .post();
+        checkCode(HttpStatus.SC_BAD_REQUEST, response);
+        return response;
+    }
+
+//    public Response requestPostWithEmptyBody(String path) {
+//        response = given(baseRequestSpecification(path))
+//                .body()
+//                .post();
+//        checkCode(HttpStatus.SC_OK, response);
+//        return response;
+//    }
+
     protected Response requestPut(String path, BaseDTO dto) {
         response = given(baseRequestSpecification(path))
                 .body(dto)

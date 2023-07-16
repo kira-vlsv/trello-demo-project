@@ -2,7 +2,7 @@ package apitests.dto;
 
 import lombok.*;
 import lombok.experimental.Accessors;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 

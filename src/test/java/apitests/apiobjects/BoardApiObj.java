@@ -31,5 +31,4 @@ public class BoardApiObj extends BaseApiObject {
         String path = String.format(BOARD_URL, id);
         return requestNegativeGet(path);
     }
-
 }
