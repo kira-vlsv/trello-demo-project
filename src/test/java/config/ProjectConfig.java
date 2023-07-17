@@ -21,11 +21,11 @@ public interface ProjectConfig extends Config {
     @Config.Key("browserSize")
     String browserSize();
 
-    @Config.DefaultValue("http://172.17.0.1:4444/wd/hub")
+    @Config.DefaultValue("http://172.17.0.1:8083/wd/hub")
     @Config.Key("remoteDriverUrl")
     String remoteDriverUrl();
 
-    @Config.DefaultValue("http://172.17.0.1:4444/video/")
+    @Config.DefaultValue("http://172.17.0.1:8083/video/")
     @Config.Key("videoStorage")
     String videoStorage();
 
