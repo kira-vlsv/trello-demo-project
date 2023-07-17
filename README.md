@@ -5,9 +5,9 @@
 # <a name="Tech stack">Tech stack</a>
 
 <p  align="center">
-  <code><img width="5%" title="IntelliJ IDEA" src="images/IDEA-logo.svg"></code>
-  <code><img width="5%" title="Java" src="images/java-logo.svg"></code>
-  <code><img width="5%" title="Selenide" src="images/selenide-logo.svg"></code>
+  <img width="5%" title="IntelliJ IDEA" src="images/IDEA-logo.svg">
+  <img width="5%" title="Java" src="images/java-logo.svg">
+  <img width="5%" title="Selenide" src="images/selenide-logo.svg">
   <code><img width="5%" title="REST-Assured" src="images/rest-assured-logo.svg"></code>
   <code><img width="5%" title="Selenoid" src="images/selenoid-logo.svg"></code>
   <code><img width="5%" title="Gradle" src="images/gradle-logo.svg "></code>
@@ -78,7 +78,7 @@ Task options:
 > <code>test</code>, <code>regressionTests</code>, <code>apiTests</code>, <code>uiTests</code>
 
 ### 2. Run tests using gradle tasks in IntelliJ IDEA
-<img title="Gradle run tests" src="images/Gradle_run_tests.png">
+<img width="70%" title="Gradle run tests" src="images/Gradle_run_tests.png">
 
 
 
