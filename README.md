@@ -143,6 +143,9 @@ Create **Freestyle project** and create following steps:
 <img width="70%" title="telegram-notif-post-build-task" src="images/telegram-notif-post-build-task.png">
 </details>
 
+### 3. Run Jenkins job and get results
+<img width="70%" title="Jenkins-Job" src="images/Jenkins-Job.png">
+
 
 
 
