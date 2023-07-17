@@ -2,7 +2,24 @@
 
 <img src="images/Trello-Logo.png" alt="Trello logo" width="300">
 
-# <a name="Tech stack">Tech stack</a>
+## Navigation
++ [Tech stack](#TechStack)
++ [How to run tests](#TestRunning)
+    + [Run Tests Locally](#RunTestsLocally)
+      + [Precondition](#Precondition)
+      + [1. Run tests and reporting using terminal](#RunTerminal)
+      + [2. Run tests and reporting using gradle tasks in IntelliJ IDEA](#RunIntelliJ)
+    + [Run tests remotely using Jenkins](#RunJenkins)
+        + [1. Setup environment with Docker](#SetupDocker)
+        + [2. Setup Jenkins job](#SetupJob)
+        + [3. Run Jenkins job and get results](#RunJob)
++ [Reporting with Allure](#AllureReport)
++ [Telegram Notification](#TelegramNotification)
+<!-- + [Интеграция с Allure TestOps](#AllureTestOps) -->
+<!-- + [Результаты выполнения тестов](#Results) -->
+<!-- + [Интеграция с Jira](#Jira) -->
+
+# <a name="TechStack">Tech stack</a>
 
 <p  align="center">
   <img width="5%" title="IntelliJ IDEA" src="images/IDEA-logo.svg">
@@ -34,11 +51,11 @@ This project is written in <code>Java</code> \
 >
 > Upon completion of a test run, notifications are dispatched via a <code>Telegram</code> bot for seamless communication.
 
-# <a name="Test running"> How to run tests </a>
+# <a name="TestRunning"> How to run tests </a>
 
-## Run tests locally
+## <a name="RunTestsLocally"> Run tests locally </a>
 
-### Precondition
+### <a name="Precondition"> Precondition </a>
 
 <p>
 For success tests running you need to add 2 files <code>apiAuth.properties</code> 
@@ -69,7 +86,7 @@ userPassword=somePassword
 There are 2 options to run tests locally
 </p>
 
-### 1. Run tests and reporting using terminal
+### <a name="RunTerminal"> 1. Run tests and reporting using terminal </a>
 
 To run tests put this command in terminal
 
@@ -86,15 +103,15 @@ Task options:
 allure serve build/allure-results
 ```
 
-### 2. Run tests and reporting using gradle tasks in IntelliJ IDEA
+### <a name="RunIntelliJ"> 2. Run tests and reporting using gradle tasks in IntelliJ IDEA </a>
 
 <img width="20%" title="Gradle run tests" src="images/Gradle_run_tests.png">
 
 #### To open Allure report run task allure-serve
 
-## Run tests remotely using Jenkins
+## <a name="RunJenkins"> Run tests remotely using Jenkins </a>
 
-### 1. Setup environment with Docker
+### <a name="SetupDocker"> 1. Setup environment with Docker </a>
 
 - Put files <code>docker-compose.yaml</code> and <code>browsers.json</code> in target directory.
 - Download necessary docker images
@@ -112,7 +129,7 @@ docker-compose up -d
 <p>Docker container should be created and running</p>
 <p><img width="70%" title="Docker container" src="images/docker-container.png"></p>
 
-### 2. Setup Jenkins job
+### <a name="SetupJob"> 2. Setup Jenkins job </a>
 
 Create **Freestyle project** and create following steps:
 
@@ -163,11 +180,11 @@ clean test
 <img width="70%" title="telegram-notif-post-build-task" src="images/telegram-notif-post-build-task.png">
 </details>
 
-### 3. Run Jenkins job and get results
+### <a name="RunJob"> 3. Run Jenkins job and get results </a>
 
 <img width="50%" title="Jenkins-Job" src="images/Jenkins-Job.png">
 
-## Reporting with Allure
+## <a name="AllureReport"> Reporting with Allure </a>
 
 ### Main Page
 
@@ -185,7 +202,7 @@ clean test
 
 <img width="50%" title="Tag-filtering-allure" src="images/Tag-filtering-allure.png">
 
-## Notification in Telegram
+## <a name="TelegramNotification"> Telegram Notification </a>
 
 
 
