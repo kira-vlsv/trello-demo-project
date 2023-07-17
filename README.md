@@ -31,3 +31,33 @@ This project is written in <code>Java</code> \
 > <code>Jenkins</code> runs the tests.
 >
 > Upon completion of a test run, notifications are dispatched via a <code>Telegram</code> bot for seamless communication.
+
+
+# <a name="Test running"> How to run tests </a>
+## Precondition
+For success tests running you need to add 2 files <code>apiAuth.properties</code> and <code>uiAuth.properties</code> and put them into <code>src/test/resources</code>
+<details>
+<summary>apiAuth.properties example</summary>
+```
+uri=https://api.trello.com
+key=83048509344509c03449583
+token=ATTA36da17ab56cd0frje48b9b7c43dd5b6311a7e7baf977e7a9b35c54mfk78a246B69F7CD
+```
+</details>
+<details>
+<summary>uiAuth.properties example</summary>
+```
+userLogin=someEmail@gmail.com
+userPassword=somePassword
+uiAuth.properties
+</details>
+
+
+
+
+
+
+
+
+
+
