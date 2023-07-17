@@ -36,7 +36,9 @@ This project is written in <code>Java</code> \
 
 # <a name="Test running"> How to run tests </a>
 
-## Precondition
+## Run tests locally
+
+### Precondition
 
 <p>
 For success tests running you need to add 2 files <code>apiAuth.properties</code> 
@@ -63,47 +65,83 @@ userPassword=somePassword
 
 </details>
 
-## Run tests locally
-
 <p>
 There are 2 options to run tests locally
 </p>
 
 ### 1. Run tests using terminal
+
 To run tests put this command in terminal
+
 ```
 gradle clean {task}
 ```
+
 Task options:
 > <code>test</code>, <code>regressionTests</code>, <code>apiTests</code>, <code>uiTests</code>
 
 ### 2. Run tests using gradle tasks in IntelliJ IDEA
+
 <img width="20%" title="Gradle run tests" src="images/Gradle_run_tests.png">
 
 ## Run tests remotely using Jenkins
 
 ### 1. Setup environment with Docker
- - Put files <code>docker-compose.yaml</code> and <code>browsers.json</code> in target directory. 
- - Download necessary docker images
+
+- Put files <code>docker-compose.yaml</code> and <code>browsers.json</code> in target directory.
+- Download necessary docker images
+
 ```
 docker pull {image}
 ```
- - Open terminal in this directory and run the command
+
+- Open terminal in this directory and run the command
+
 ```
 docker-compose up -d
 ```
+
 <p>Docker container should be created and running</p>
 <p><img width="70%" title="Docker container" src="images/docker-container.png"></p>
 
 ### 2. Setup Jenkins job
 
+Create **Freestyle project** and create following steps:
 
+<details>
+<summary>Source Code Management</summary>
+<img width="70%" title="Source-Code-Management" src="images/Source-Code-Management-Jenkins.png">
+</details>
 
+<details>
+<summary>Create file for telegram notification</summary>
+<img width="70%" title="Create-file-for-telegram-notif" src="images/Create-file-for-telegram-notif.png">
+</details>
 
+<details>
+<summary>Create file apiAuth.properties</summary>
+<img width="70%" title="Create-File-apiAuth-properties" src="images/Create-File-apiAuth-properties.png">
+</details>
 
+<details>
+<summary>Create file uiAuth.properties</summary>
+<img width="70%" title="Create-File-uiAuth-properties" src="images/Create-File-uiAuth-properties.png">
+</details>
 
+<details>
+<summary>Gradle script</summary>
+<img width="70%" title="Gradle-script" src="images/Gradle-script.png">
+</details>
 
+<details>
+<summary>Allure Report</summary>
+<img width="70%" title="Allure-Report" src="images/Allure-Report.png">
+</details>
 
+<details>
+<summary>Telegram notification post-build task</summary>
+<img width="70%" title="telegram-notif-post-build-task" src="images/telegram-notif-post-build-task.png">
+</details>
 
 
 
