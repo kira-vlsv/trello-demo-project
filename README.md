@@ -92,8 +92,8 @@ docker pull {image}
 ```
 docker-compose up -d
 ```
-Docker container should be created and running
-<img width="20%" title="Docker container" src="images/docker-container.png">
+<p>Docker container should be created and running</p>
+<p><img width="70%" title="Docker container" src="images/docker-container.png"></p>
 
 ### 2. Setup Jenkins job
 
