@@ -8,15 +8,15 @@
   <img width="5%" title="IntelliJ IDEA" src="images/IDEA-logo.svg">
   <img width="5%" title="Java" src="images/java-logo.svg">
   <img width="5%" title="Selenide" src="images/selenide-logo.svg">
-  <code><img width="5%" title="REST-Assured" src="images/rest-assured-logo.svg"></code>
-  <code><img width="5%" title="Selenoid" src="images/selenoid-logo.svg"></code>
-  <code><img width="5%" title="Gradle" src="images/gradle-logo.svg "></code>
-  <code><img width="5%" title="JUnit5" src="images/junit5-logo.svg"></code>
-  <code><img width="5%" title="Allure Report" src="images/allure-Report-logo.svg"></code>
-  <code><img width="5%" title="Github" src="images/git-logo.svg"></code>
-  <code><img width="5%" title="Jenkins" src="images/jenkins-logo.svg"></code>
-  <code><img width="5%" title="Jira" src="images/jira-logo.svg"></code>
-  <code><img width="5%" title="Telegram" src="images/Telegram.svg"></code>
+  <img width="5%" title="REST-Assured" src="images/rest-assured-logo.svg">
+  <img width="5%" title="Selenoid" src="images/selenoid-logo.svg">
+  <img width="5%" title="Gradle" src="images/gradle-logo.svg ">
+  <img width="5%" title="JUnit5" src="images/junit5-logo.svg">
+  <img width="5%" title="Allure Report" src="images/allure-Report-logo.svg">
+  <img width="5%" title="Github" src="images/git-logo.svg">
+  <img width="5%" title="Jenkins" src="images/jenkins-logo.svg">
+  <img width="5%" title="Jira" src="images/jira-logo.svg">
+  <img width="5%" title="Telegram" src="images/Telegram.svg">
 </p>
 
 This project is written in <code>Java</code> \
@@ -78,7 +78,7 @@ Task options:
 > <code>test</code>, <code>regressionTests</code>, <code>apiTests</code>, <code>uiTests</code>
 
 ### 2. Run tests using gradle tasks in IntelliJ IDEA
-<img width="70%" title="Gradle run tests" src="images/Gradle_run_tests.png">
+<img width="20%" title="Gradle run tests" src="images/Gradle_run_tests.png">
 
 
 
