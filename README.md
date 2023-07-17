@@ -3,12 +3,13 @@
 <img src="images/Trello-Logo.png" alt="Trello logo" width="300">
 
 ## Navigation
+
 + [Tech stack](#TechStack)
 + [How to run tests](#TestRunning)
     + [Run Tests Locally](#RunTestsLocally)
-      + [Precondition](#Precondition)
-      + [1. Run tests and reporting using terminal](#RunTerminal)
-      + [2. Run tests and reporting using gradle tasks in IntelliJ IDEA](#RunIntelliJ)
+        + [Precondition](#Precondition)
+        + [1. Run tests and reporting using terminal](#RunTerminal)
+        + [2. Run tests and reporting using gradle tasks in IntelliJ IDEA](#RunIntelliJ)
     + [Run tests remotely using Jenkins](#RunJenkins)
         + [1. Setup environment with Docker](#SetupDocker)
         + [2. Setup Jenkins job](#SetupJob)
@@ -19,7 +20,7 @@
 <!-- + [Результаты выполнения тестов](#Results) -->
 <!-- + [Интеграция с Jira](#Jira) -->
 
-# <a name="TechStack">Tech stack</a>
+# <a id="TechStack">Tech stack</a>
 
 <p  align="center">
   <img width="5%" title="IntelliJ IDEA" src="images/IDEA-logo.svg">
