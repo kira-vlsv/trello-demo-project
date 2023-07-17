@@ -16,3 +16,18 @@
   <code><img width="5%" title="Jira" src="images/jira-logo.svg"></code>
   <code><img width="5%" title="Telegram" src="images/Telegram.svg"></code>
 </p>
+
+This project is written in <code>Java</code> \
+<code>Selenide</code> is used for UI tests and <code>Rest-Assured</code> for API
+>
+> <code>Selenoid</code> is employed to launch browsers within <code>Docker</code> containers, providing an isolated testing environment.
+>
+> <code>Allure Report</code> is integrated into the project to generate comprehensive test run reports,
+>
+> <code>Gradle</code> is used for automated project build.
+>
+> <code>JUnit 5</code> is used as a unit testing library.
+>
+> <code>Jenkins</code> runs the tests.
+>
+> Upon completion of a test run, notifications are dispatched via a <code>Telegram</code> bot for seamless communication.
