@@ -80,6 +80,25 @@ Task options:
 ### 2. Run tests using gradle tasks in IntelliJ IDEA
 <img width="20%" title="Gradle run tests" src="images/Gradle_run_tests.png">
 
+## Run tests remotely using Jenkins
+
+### 1. Setup environment with Docker
+ - Put files <code>docker-compose.yaml</code> and <code>browsers.json</code> in target directory. 
+ - Download necessary docker images
+```
+docker pull {image}
+```
+ - Open terminal in this directory and run the command
+```
+docker-compose up -d
+```
+Docker container should be created and running
+<img width="20%" title="Docker container" src="images/docker-container.png">
+
+### 2. Setup Jenkins job
+
+
+
 
 
 
