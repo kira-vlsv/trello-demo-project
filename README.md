@@ -165,26 +165,27 @@ clean test
 
 ### 3. Run Jenkins job and get results
 
-<img width="70%" title="Jenkins-Job" src="images/Jenkins-Job.png">
+<img width="50%" title="Jenkins-Job" src="images/Jenkins-Job.png">
 
 ## Reporting with Allure
 
 ### Main Page
 
-<img width="70%" title="Main-page-allure" src="images/Main-page-allure.png">
+<img width="50%" title="Main-page-allure" src="images/Main-page-allure.png">
 
 ### Suite view
 
-<img width="70%" title="Suite-view-allure" src="images/Suite-view-allure.png">
+<img width="50%" title="Suite-view-allure" src="images/Suite-view-allure.png">
 
 ### Behavior view
 
-<img width="70%" title="Behavior-view-allure" src="images/Behavior-view-allure.png">
+<img width="50%" title="Behavior-view-allure" src="images/Behavior-view-allure.png">
 
 ### Filtering by tag
 
-<img width="70%" title="Tag-filtering-allure" src="images/Tag-filtering-allure.png">
+<img width="50%" title="Tag-filtering-allure" src="images/Tag-filtering-allure.png">
 
+## Notification in Telegram
 
 
 
