@@ -1,2 +1,2 @@
 # Demo Test Automation Project - Trello
-<img src="images/Trello-Logo.png" alt="Trello logo" width="650">
+<img src="images/Trello-Logo.png" alt="Trello logo" width="100">
