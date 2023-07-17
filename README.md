@@ -69,7 +69,7 @@ userPassword=somePassword
 There are 2 options to run tests locally
 </p>
 
-### 1. Run tests using terminal
+### 1. Run tests and reporting using terminal
 
 To run tests put this command in terminal
 
@@ -80,9 +80,17 @@ gradle clean {task}
 Task options:
 > <code>test</code>, <code>regressionTests</code>, <code>apiTests</code>, <code>uiTests</code>
 
-### 2. Run tests using gradle tasks in IntelliJ IDEA
+#### To open Allure report
+
+```
+allure serve build/allure-results
+```
+
+### 2. Run tests and reporting using gradle tasks in IntelliJ IDEA
 
 <img width="20%" title="Gradle run tests" src="images/Gradle_run_tests.png">
+
+#### To open Allure report run task allure-serve
 
 ## Run tests remotely using Jenkins
 
@@ -131,6 +139,18 @@ Create **Freestyle project** and create following steps:
 <details>
 <summary>Gradle script</summary>
 <img width="70%" title="Gradle-script" src="images/Gradle-script.png">
+
+```
+clean test
+-Dbrowser=${BROWSER}
+-DbrowserVersion=${BROWSER_VERSION}
+-DbrowserSize=${BROWSER_SIZE}
+-DbrowserMobileView="${BROWSER_MOBILE}"
+-DremoteDriverUrl=https://user1:1234@${REMOTE_DRIVER_URL}/wd/hub/
+-DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
+-Dthreads=${THREADS}
+```
+
 </details>
 
 <details>
@@ -144,8 +164,26 @@ Create **Freestyle project** and create following steps:
 </details>
 
 ### 3. Run Jenkins job and get results
+
 <img width="70%" title="Jenkins-Job" src="images/Jenkins-Job.png">
 
+## Reporting with Allure
+
+### Main Page
+
+<img width="70%" title="Main-page-allure" src="images/Main-page-allure.png">
+
+### Suite view
+
+<img width="70%" title="Suite-view-allure" src="images/Suite-view-allure.png">
+
+### Behavior view
+
+<img width="70%" title="Behavior-view-allure" src="images/Behavior-view-allure.png">
+
+### Filtering by tag
+
+<img width="70%" title="Tag-filtering-allure" src="images/Tag-filtering-allure.png">
 
 
 
