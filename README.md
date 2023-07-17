@@ -46,7 +46,7 @@ and <code>uiAuth.properties</code> and put them into <code>src/test/resources</c
 </p>
 
 <details>
-<summary>apiAuth.properties example</summary>
+<summary><code>apiAuth.properties</code> example</summary>
 
 ```properties
 uri=https://api.trello.com
@@ -56,7 +56,7 @@ token=ATTA36da17ab56cd0frje48b9b7c43dd5b6311a7e7baf977e7a9b35c54mfk78a246B69F7CD
 
 </details>
 <details>
-<summary style="font-family: serif; font-size: 15px;">uiAuth.properties example</summary>
+<summary><code>uiAuth.properties</code> example</summary>
 
 ```properties
 userLogin=someEmail@gmail.com
