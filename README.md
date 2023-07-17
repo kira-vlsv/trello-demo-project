@@ -20,7 +20,7 @@
 <!-- + [Результаты выполнения тестов](#Results) -->
 <!-- + [Интеграция с Jira](#Jira) -->
 
-# <a id="TechStack">Tech stack</a>
+# <a name="TechStack">Tech stack</a>
 
 <p  align="center">
   <img width="5%" title="IntelliJ IDEA" src="images/IDEA-logo.svg">
@@ -189,7 +189,7 @@ clean test
 
 ### Main Page
 
-<img width="50%" title="Main-page-allure" src="images/Main-page-allure.png">
+<img width="50%" title="Main-page-allure" src="images/Main-Page.png">
 
 ### Suite view
 
