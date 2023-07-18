@@ -5,7 +5,7 @@ services:
     image: jenkins/jenkins:lts
     user: root
     volumes:
-      - /Users/Kira_Vlasova/jenkins:/var/jenkins_home
+      - [HOME_DIRECTORY]/jenkins:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 8888:8080
