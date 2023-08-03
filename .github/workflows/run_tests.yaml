@@ -35,9 +35,6 @@ jobs:
       - name: Pull Chrome image for Selenoid
         run: docker pull selenoid/chrome:114.0
 
-      - name: Build project
-        run: gradle build
-
       - name: Run tests
         env:
           USER_NAME: ${{ secrets.USER_NAME }}
@@ -46,13 +43,14 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
           URI: ${{ secrets.URI }}
           REMOTE_DRIVER_URL: "http://localhost:8083"
-
         run: gradle clean test -DuserLogin=${USER_NAME} -DuserPassword=${USER_PASSWORD} -Dkey=${KEY} -Dtoken=${TOKEN} -Duri=${URI} -DremoteDriverUrl=${REMOTE_DRIVER_URL}/wd/hub/ -DvideoStorage=${REMOTE_DRIVER_URL}/video/
 
       - name: Generate Allure report
+        if: ${{ always() }}
         run: gradle allureReport
 
       - name: Upload Allure report
+        if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
           name: allure-report
