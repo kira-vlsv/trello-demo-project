@@ -36,7 +36,7 @@ jobs:
         run: docker pull selenoid/chrome:114.0
 
       - name: Build project
-        run: ./gradlew build
+        run: gradle build
 
       - name: Run tests
         env:
@@ -47,10 +47,10 @@ jobs:
           URI: ${{ secrets.URI }}
           REMOTE_DRIVER_URL: "http://localhost:8083"
 
-        run: ./gradlew clean test -DuserLogin=${USER_NAME} -DuserPassword=${USER_PASSWORD} -Dkey=${KEY} -Dtoken=${TOKEN} -Duri=${URI} -DremoteDriverUrl=${REMOTE_DRIVER_URL}/wd/hub/ -DvideoStorage=${REMOTE_DRIVER_URL}/video/
+        run: gradle clean test -DuserLogin=${USER_NAME} -DuserPassword=${USER_PASSWORD} -Dkey=${KEY} -Dtoken=${TOKEN} -Duri=${URI} -DremoteDriverUrl=${REMOTE_DRIVER_URL}/wd/hub/ -DvideoStorage=${REMOTE_DRIVER_URL}/video/
 
       - name: Generate Allure report
-        run: ./gradlew allureReport
+        run: gradle allureReport
 
       - name: Upload Allure report
         uses: actions/upload-artifact@v2
