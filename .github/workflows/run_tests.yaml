@@ -4,7 +4,7 @@ on:
   push
 
 env:
-  GRADLE_VERSION: 7.2
+  GRADLE_VERSION: 6.9.4
 
 jobs:
   test:
@@ -22,9 +22,9 @@ jobs:
 
       - name: Install Gradle
         run: |
-          wget "https://services.gradle.org/distributions/gradle-${env.GRADLE_VERSION}-bin.zip"
-          unzip -d $HOME gradle-${env.GRADLE_VERSION}-bin.zip
-          export PATH=$HOME/gradle-${env.GRADLE_VERSION}/bin:$PATH
+          wget "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"
+          unzip -d $HOME "gradle-${GRADLE_VERSION}-bin.zip"
+          export PATH=$HOME/gradle-${GRADLE_VERSION}/bin:$PATH
 
       - name: Start Selenoid
         run: docker run -d --name selenoid -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock aerokube/selenoid:latest-release
