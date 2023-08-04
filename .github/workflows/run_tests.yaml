@@ -41,8 +41,8 @@ jobs:
           USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
           KEY: ${{ secrets.KEY }}
           TOKEN: ${{ secrets.TOKEN }}
-          URI: ${{ secrets.URI }}
-          REMOTE_DRIVER_URL: "http://localhost:8083"
+          URI: ${{ env.URI }}
+          REMOTE_DRIVER_URL: "http://localhost:8080"
         run: gradle clean test -DuserLogin=${USER_NAME} -DuserPassword=${USER_PASSWORD} -Dkey=${KEY} -Dtoken=${TOKEN} -Duri=${URI} -DremoteDriverUrl=${REMOTE_DRIVER_URL}/wd/hub/ -DvideoStorage=${REMOTE_DRIVER_URL}/video/
 
       - name: Generate Allure report
