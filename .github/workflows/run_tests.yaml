@@ -25,15 +25,17 @@ jobs:
           wget "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"
           unzip -d $HOME "gradle-${GRADLE_VERSION}-bin.zip"
           export PATH=$HOME/gradle-${GRADLE_VERSION}/bin:$PATH
+      
+      - name: Selenoid
+      - uses: Xotabu4/selenoid-github-action@v2
+#       - name: Start Selenoid
+#         run: docker run -d --name selenoid -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock aerokube/selenoid:latest-release
 
-      - name: Start Selenoid
-        run: docker run -d --name selenoid -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock aerokube/selenoid:latest-release
+#       - name: Start Selenoid UI
+#         run: docker run -d --name selenoid-ui -p 8080:8080 aerokube/selenoid-ui:latest-release
 
-      - name: Start Selenoid UI
-        run: docker run -d --name selenoid-ui -p 8080:8080 aerokube/selenoid-ui:latest-release
-
-      - name: Pull Chrome image for Selenoid
-        run: docker pull selenoid/chrome:114.0
+#       - name: Pull Chrome image for Selenoid
+#         run: docker pull selenoid/chrome:114.0
 
       - name: Run tests
         env:
@@ -42,17 +44,16 @@ jobs:
           KEY: ${{ secrets.KEY }}
           TOKEN: ${{ secrets.TOKEN }}
           URI: ${{ vars.URI }}
-          REMOTE_DRIVER_URL: "http://localhost:8080"
-        run: gradle clean test -DuserLogin=${USER_NAME} -DuserPassword=${USER_PASSWORD} -Dkey=${KEY} -Dtoken=${TOKEN} -Duri=${URI} -DremoteDriverUrl=${REMOTE_DRIVER_URL}/wd/hub/ -DvideoStorage=${REMOTE_DRIVER_URL}/video/
+          REMOTE_DRIVER_URL: "http://localhost:4444"
+        run: gradle clean test -DuserLogin=${USER_NAME} -DuserPassword=${USER_PASSWORD} -Dkey=${KEY} -Dtoken=${TOKEN} -Duri=${URI} -DremoteDriverUrl=${REMOTE_DRIVER_URL}/wd/hub -DvideoStorage=${REMOTE_DRIVER_URL}/video/
 
-      - name: Get Allure history
+      - name: Copy History
         uses: actions/checkout@v2
         if: always()
-        continue-on-error: true
         with:
           ref: gh-pages
           path: gh-pages
-
+          
       - name: Build Report
         uses: simple-elf/allure-report-action@master
         if: always()
@@ -60,8 +61,8 @@ jobs:
           allure_results: build/allure-results
           allure_history: allure-history
           keep_reports: 20
-
-      - name: Deploy report to Github Pages
+          
+      - name: Publish Report
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
