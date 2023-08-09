@@ -28,14 +28,6 @@ jobs:
       
       - name: Selenoid
       - uses: Xotabu4/selenoid-github-action@v2
-#       - name: Start Selenoid
-#         run: docker run -d --name selenoid -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock aerokube/selenoid:latest-release
-
-#       - name: Start Selenoid UI
-#         run: docker run -d --name selenoid-ui -p 8080:8080 aerokube/selenoid-ui:latest-release
-
-#       - name: Pull Chrome image for Selenoid
-#         run: docker pull selenoid/chrome:114.0
 
       - name: Run tests
         env:
