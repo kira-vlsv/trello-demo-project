@@ -1,0 +1,7 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","Trello board","As a user I can create a board from the Main Page","0","0","1","0","0"
+"","Trello cards","As a user I can create a card in the board's list","0","0","1","0","0"
+"","Trello board","As a user I can delete a board using API","0","0","1","0","0"
+"","Trello board","As a user I can update a board using API","0","0","1","0","0"
+"","Trello board","As a user I can create a board using API","0","0","1","0","0"
+"","Trello board","Add validations for board creation API - /1/boards","0","0","1","0","0"

@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Aug 09 20:31:30 GMT 2023","Wed Aug 09 20:31:44 GMT 2023","13496","","uitests.tests.board.BoardCRUDTest","","uitests.tests.board.BoardCRUDTest","createBoard","Create new board from Main Page",""
+"passed","Wed Aug 09 20:31:44 GMT 2023","Wed Aug 09 20:31:57 GMT 2023","12689","","uitests.tests.card.CardCRUDTest","","uitests.tests.card.CardCRUDTest","createCard","Create new card from Board Page",""
+"passed","Wed Aug 09 20:31:24 GMT 2023","Wed Aug 09 20:31:27 GMT 2023","2598","","apitests.tests.BoardCRUDPositiveTest","","apitests.tests.BoardCRUDPositiveTest","deleteBoard","Delete a board using API",""
+"passed","Wed Aug 09 20:31:28 GMT 2023","Wed Aug 09 20:31:30 GMT 2023","1936","","apitests.tests.BoardCRUDPositiveTest","","apitests.tests.BoardCRUDPositiveTest","updateBoardNameAndDescription","Update a board using API",""
+"passed","Wed Aug 09 20:31:27 GMT 2023","Wed Aug 09 20:31:28 GMT 2023","1571","","apitests.tests.BoardCRUDPositiveTest","","apitests.tests.BoardCRUDPositiveTest","createBoardWithRequiredParameters","Create new board using API",""
+"passed","Wed Aug 09 20:31:20 GMT 2023","Wed Aug 09 20:31:24 GMT 2023","4063","","apitests.tests.BoardCRUDNegativeTest","","apitests.tests.BoardCRUDNegativeTest","createBoardWithEmptyPayload","Create board with empty payload",""
