@@ -14,6 +14,7 @@
         + [1. Setup environment with Docker](#SetupDocker)
         + [2. Setup Jenkins job](#SetupJob)
         + [3. Run Jenkins job and get results](#RunJob)
+    + [Run tests remotely using Github Actions](#RunActions)
 + [Reporting with Allure](#AllureReport)
 + [Telegram Notification](#TelegramNotification)
 <!-- + [Интеграция с Allure TestOps](#AllureTestOps) -->
@@ -184,6 +185,10 @@ clean test
 ### <a name="RunJob"> 3. Run Jenkins job and get results </a>
 
 <img width="50%" title="Jenkins-Job" src="images/Jenkins-Job.png">
+
+## <a name="RunActions"> Run tests remotely using Github Actions </a>
+
+The GitHub workflow has been set up, and the Allure Report is published on GitHub Pages. Example: [Allure Report](https://kira-vlsv.github.io/trello-demo-project/23/).
 
 ## <a name="AllureReport"> Reporting with Allure </a>
 
