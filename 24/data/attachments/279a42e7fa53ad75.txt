@@ -1,0 +1,4 @@
+[2023-08-16T08:20:33.409Z] [SEVERE] https://trello-members.s3.amazonaws.com/648c88fd5c40b88496d31990/e2d6e1a605f26a3cb464a7ba0ed33655/30.png - Failed to load resource: the server responded with a status of 403 (Forbidden)
+[2023-08-16T08:20:34.115Z] [WARNING] https://trello.com/ 27 A preload for 'https://trello.com/assets/board-view.5a63e0e7cc76e49c86c3.js' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+[2023-08-16T08:20:34.116Z] [WARNING] https://trello.com/ 27 A preload for 'https://trello.com/assets/board-page.189aadbb0864b58abd3d.js' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+[2023-08-16T08:20:36.518Z] [SEVERE] https://trello.com/assets/board-view.5a63e0e7cc76e49c86c3.js 0 Error while parsing the 'sandbox' attribute: 'allow-storage-access-by-user-activation' is an invalid sandbox flag.
